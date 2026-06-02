@@ -1,0 +1,12 @@
+.env
+.env.*
+.m2/
+tmp-previews/
+node_modules/
+frontend/node_modules/
+frontend/dist/
+backend/target/
+.idea/
+.vscode/
+*.log
+.DS_Store
