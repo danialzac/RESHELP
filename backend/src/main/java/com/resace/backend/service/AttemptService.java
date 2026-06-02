@@ -73,6 +73,9 @@ public class AttemptService {
                 correctOption != null ? correctOption.getId() : null,
                 isCorrect,
                 question.getExplanation(),
+                question.getPlainEnglish(),
+                question.getMemoryRule(),
+                question.getExamTrap(),
                 reviewedOptions
             ));
         }
