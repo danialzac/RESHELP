@@ -886,6 +886,54 @@ input:focus {
     margin-bottom: 4px;
 }
 
+/* ---- Learning framework panels ---- */
+.review-plain-english,
+.review-memory-rule,
+.review-exam-trap {
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+.review-plain-english {
+    background: #eff6ff;
+    border-left: 3px solid #3b82f6;
+    color: #1e3a5f;
+}
+
+.review-memory-rule {
+    background: #f5f3ff;
+    border-left: 3px solid #7c3aed;
+    color: #2e1065;
+}
+
+.review-exam-trap {
+    background: #fffbeb;
+    border-left: 3px solid #f59e0b;
+    color: #451a03;
+}
+
+.review-plain-english p,
+.review-memory-rule p,
+.review-exam-trap p {
+    margin: 0;
+}
+
+.review-panel-label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+}
+
+.review-panel-label--plain  { color: #1d4ed8; }
+.review-panel-label--memory { color: #6d28d9; }
+.review-panel-label--trap   { color: #b45309; }
+
 /* ===== Progress page ===== */
 .progress-paper-grid {
     display: grid;

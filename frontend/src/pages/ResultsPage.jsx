@@ -93,6 +93,33 @@ export default function ResultsPage() {
                                     <p>{item.explanation}</p>
                                 </div>
                             )}
+
+                            {item.plainEnglish && (
+                                <div className="review-plain-english">
+                                    <span className="review-panel-label review-panel-label--plain">
+                                        💡 Plain English
+                                    </span>
+                                    <p>{item.plainEnglish}</p>
+                                </div>
+                            )}
+
+                            {item.memoryRule && (
+                                <div className="review-memory-rule">
+                                    <span className="review-panel-label review-panel-label--memory">
+                                        🧠 Memory Rule
+                                    </span>
+                                    <p>{item.memoryRule}</p>
+                                </div>
+                            )}
+
+                            {!item.correct && item.examTrap && (
+                                <div className="review-exam-trap">
+                                    <span className="review-panel-label review-panel-label--trap">
+                                        ⚠️ Examiner Trap
+                                    </span>
+                                    <p>{item.examTrap}</p>
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>
