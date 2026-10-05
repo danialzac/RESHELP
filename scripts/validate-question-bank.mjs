@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const filePath = path.resolve('/Users/danial/Desktop/RES-Exam-Bank/backend/src/main/resources/content/question-bank.json');
+const filePath = path.resolve(new URL('..', import.meta.url).pathname, 'backend/src/main/resources/content/question-bank.json');
 
 const payload = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 const errors = [];
