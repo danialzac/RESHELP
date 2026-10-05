@@ -12,7 +12,7 @@
 NAME='res'
 PORT='3009'
 SUBDIR='frontend'
-RUN='npx vite --port 3009'
+RUN='npx vite --port 3009 --host 127.0.0.1'
 PRE=''
 NOTE='This starts the website only. The backend needs MySQL (brew install mysql), then: cd backend && mvn spring-boot:run'
 
@@ -59,13 +59,13 @@ if command -v tmux >/dev/null; then
       "export PATH='$PATH'; $RUN; echo; echo '  Server stopped. Press Enter to close.'; read"
   fi
   # Wait until the site answers (tunggu sampai website hidup), max ~60s
-  for _ in $(seq 1 60); do nc -z localhost "$PORT" 2>/dev/null && break; sleep 1; done
-  open "http://localhost:$PORT"
-  echo "  ✅  Running at http://localhost:$PORT"
+  for _ in $(seq 1 60); do nc -z 127.0.0.1 "$PORT" 2>/dev/null && break; sleep 1; done
+  open "http://127.0.0.1:$PORT"
+  echo "  ✅  Running at http://127.0.0.1:$PORT (only visible on this Mac)"
   echo "  ⏹   Ctrl + C to stop."
   echo ""
   tmux attach -t "$SESSION"
 else
-  ( for _ in $(seq 1 60); do nc -z localhost "$PORT" 2>/dev/null && break; sleep 1; done; open "http://localhost:$PORT" ) &
+  ( for _ in $(seq 1 60); do nc -z 127.0.0.1 "$PORT" 2>/dev/null && break; sleep 1; done; open "http://127.0.0.1:$PORT" ) &
   eval "$RUN"
 fi
