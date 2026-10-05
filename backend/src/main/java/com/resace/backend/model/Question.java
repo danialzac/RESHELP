@@ -34,6 +34,9 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true, length = 120)
+    private String contentKey;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Paper paper;
@@ -45,6 +48,15 @@ public class Question {
     @Column(nullable = false, length = 1000)
     private String questionText;
 
+    @Column(length = 250)
+    private String sourceReference;
+
+    @Column(length = 250)
+    private String subtopic;
+
+    @Column(length = 1000)
+    private String principleTested;
+
     @Column(length = 2000)
     private String explanation;
 
@@ -52,9 +64,21 @@ public class Question {
     @Column(length = 2000)
     private String plainEnglish;
 
+    /** Extremely compressed version for sleepy learners. */
+    @Column(length = 500)
+    private String cavemanVersion;
+
+    /** One-line compressed exam version. */
+    @Column(length = 500)
+    private String minimalVersion;
+
     /** Memory shortcut: "If you see X, think Y" — one line. */
     @Column(length = 500)
     private String memoryRule;
+
+    /** Quick pattern-recognition shortcut. */
+    @Column(length = 500)
+    private String examShortcut;
 
     /** Examiner trap: why students commonly pick the wrong answer. */
     @Column(length = 1000)
@@ -64,6 +88,10 @@ public class Question {
     @Column(length = 20)
     private String examFrequency;
 
+    /** Best interactive format for this concept in the product. */
+    @Column(length = 120)
+    private String interactiveFormat;
+
     @Column(nullable = false)
     private String difficulty;
 
@@ -71,7 +99,10 @@ public class Question {
     @Builder.Default
     private boolean active = true;
 
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @Builder.Default
+    private boolean premium = false;
+
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     @Builder.Default
     private List<AnswerOption> answerOptions = new ArrayList<>();
 }

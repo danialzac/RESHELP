@@ -10,3 +10,7 @@ backend/target/
 .vscode/
 *.log
 .DS_Store
+
+# raw intake files — exam PDFs and notes stay local only
+intake/raw/
+intake/done/

@@ -13,14 +13,21 @@ public record AttemptResultResponse(
 ) {
     public record ReviewedAnswer(
         Long questionId,
+        String contentKey,
         String questionText,
         Long selectedOptionId,
         Long correctOptionId,
         boolean correct,
         String explanation,
         String plainEnglish,
+        String cavemanVersion,
+        String minimalVersion,
         String memoryRule,
+        String examShortcut,
         String examTrap,
+        String principleTested,
+        String interactiveFormat,
+        boolean premium,
         List<ReviewedOption> answerOptions
     ) {}
 

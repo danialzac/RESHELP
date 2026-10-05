@@ -68,14 +68,21 @@ public class AttemptService {
 
             reviewed.add(new ReviewedAnswer(
                 question.getId(),
+                question.getContentKey(),
                 question.getQuestionText(),
                 selectedOption != null ? selectedOption.getId() : null,
                 correctOption != null ? correctOption.getId() : null,
                 isCorrect,
                 question.getExplanation(),
                 question.getPlainEnglish(),
+                question.getCavemanVersion(),
+                question.getMinimalVersion(),
                 question.getMemoryRule(),
+                question.getExamShortcut(),
                 question.getExamTrap(),
+                question.getPrincipleTested(),
+                question.getInteractiveFormat(),
+                question.isPremium(),
                 reviewedOptions
             ));
         }

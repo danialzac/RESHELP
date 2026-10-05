@@ -103,6 +103,24 @@ export default function ResultsPage() {
                                 </div>
                             )}
 
+                            {item.cavemanVersion && (
+                                <div className="review-plain-english">
+                                    <span className="review-panel-label review-panel-label--plain">
+                                        🪨 Caveman Version
+                                    </span>
+                                    <p>{item.cavemanVersion}</p>
+                                </div>
+                            )}
+
+                            {item.minimalVersion && (
+                                <div className="review-plain-english">
+                                    <span className="review-panel-label review-panel-label--plain">
+                                        ✂️ Minimal Version
+                                    </span>
+                                    <p>{item.minimalVersion}</p>
+                                </div>
+                            )}
+
                             {item.memoryRule && (
                                 <div className="review-memory-rule">
                                     <span className="review-panel-label review-panel-label--memory">
@@ -112,12 +130,35 @@ export default function ResultsPage() {
                                 </div>
                             )}
 
+                            {item.examShortcut && (
+                                <div className="review-memory-rule">
+                                    <span className="review-panel-label review-panel-label--memory">
+                                        ⚡ Exam Shortcut
+                                    </span>
+                                    <p>{item.examShortcut}</p>
+                                </div>
+                            )}
+
                             {!item.correct && item.examTrap && (
                                 <div className="review-exam-trap">
                                     <span className="review-panel-label review-panel-label--trap">
                                         ⚠️ Examiner Trap
                                     </span>
                                     <p>{item.examTrap}</p>
+                                </div>
+                            )}
+
+                            {item.principleTested && (
+                                <div className="review-explanation">
+                                    <span className="explanation-label">Principle Tested</span>
+                                    <p>{item.principleTested}</p>
+                                </div>
+                            )}
+
+                            {item.interactiveFormat && (
+                                <div className="review-explanation">
+                                    <span className="explanation-label">Best Drill Mode</span>
+                                    <p>{item.interactiveFormat}{item.premium ? ' · Premium concept' : ''}</p>
                                 </div>
                             )}
                         </div>

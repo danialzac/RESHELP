@@ -23,6 +23,7 @@ Helps candidates practise Paper 1 and Paper 2 through structured question banks,
 ├── backend/          Spring Boot API
 ├── frontend/         React + Vite client
 ├── docs/             Business plan, MVP spec, execution roadmap
+├── scripts/          Validation / content pipeline helpers
 └── postman/          API collection for testing
 ```
 
@@ -143,9 +144,31 @@ All endpoints except `/api/auth/**` require a `Bearer <token>` header.
 
 ---
 
-## Seed Content
+## Content Pipeline
 
-On first startup, the backend seeds:
+This project now has a structured content pipeline so transformed study questions are not lost in chat.
+
+Canonical content source:
+
+```bash
+backend/src/main/resources/content/question-bank.json
+```
+
+Human workbench:
+
+```bash
+docs/content-workbench.md
+```
+
+Validation:
+
+```bash
+node scripts/validate-question-bank.mjs
+```
+
+Structured question-bank entries are imported into the backend automatically on startup using stable `contentKey` values, so we can keep adding questions over time without manually hardcoding them into Java.
+
+For the older built-in seed content, the backend also still seeds:
 
 **Paper 1 topics:** Real Estate Legislation, Property Ownership & Tenure, Property Market Overview, Housing Policies & HDB, Property Taxation — 5 questions each
 

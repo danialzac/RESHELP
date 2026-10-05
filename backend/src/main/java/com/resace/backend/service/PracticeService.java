@@ -39,11 +39,16 @@ public class PracticeService {
             .toList();
         return new QuestionDto(
             q.getId(),
+            q.getContentKey(),
             q.getPaper().name(),
             q.getTopic().getId(),
             q.getTopic().getName(),
             q.getQuestionText(),
             q.getDifficulty(),
+            q.getPlainEnglish(),
+            q.getMemoryRule(),
+            q.getExamShortcut(),
+            q.isPremium(),
             options
         );
     }
