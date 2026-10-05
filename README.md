@@ -1,5 +1,19 @@
 # RES Exam Bank
 
+<!-- cheat-sheet -->
+## ⚡ Cheat sheet
+
+| | |
+|---|---|
+| **What** | RES exam practice: React website + Spring Boot backend. |
+| **Run** | Double-click `START.command`. It opens http://localhost:3009 (website only) |
+| **Edit** | Website: `frontend/src`. Questions: `backend/src/main/resources/content/` |
+| **Go live** | Not live yet. |
+| **Secrets** | The backend reads `DB_URL`, `DB_USERNAME`, `DB_PASSWORD` and `JWT_SECRET` (see Running Locally). It needs MySQL: `brew install mysql`. |
+| **Live link** | not live yet |
+
+<!-- /cheat-sheet -->
+
 A web-based exam preparation platform for Singapore Real Estate Salesperson (RES) candidates.
 
 Helps candidates practise Paper 1 and Paper 2 through structured question banks, topic-based sessions, quick practice, mock exams, answer explanations, and basic progress tracking.
